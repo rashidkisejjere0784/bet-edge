@@ -125,17 +125,17 @@
                 <div class="card card-carousel overflow-hidden h-100 p-0">
                     <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
                         <div class="carousel-inner border-radius-lg h-100">
-                            <div class="carousel-item h-100 active" style="background-image: url('./img/carousel-1.jpg');
+                            <div class="carousel-item h-100 active" style="background-image: url('./img/football/football (1).jpg');
             background-size: cover;">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                                         <i class="ni ni-camera-compact text-dark opacity-10"></i>
                                     </div>
-                                    <h5 class="text-white mb-1">Get started with Argon</h5>
+                                    <h5 class="text-white mb-1">Get started with BetEdge</h5>
                                     <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
                                 </div>
                             </div>
-                            <div class="carousel-item h-100" style="background-image: url('./img/carousel-2.jpg');
+                            <div class="carousel-item h-100" style="background-image: url('./img/football/football (3).jpg');
             background-size: cover;">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
@@ -146,7 +146,7 @@
                                         ability to learn.</p>
                                 </div>
                             </div>
-                            <div class="carousel-item h-100" style="background-image: url('./img/carousel-3.jpg');
+                            <div class="carousel-item h-100" style="background-image: url('./img/football/football (5).jpg');
             background-size: cover;">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
@@ -176,7 +176,7 @@
                 <div class="card ">
                     <div class="card-header pb-0 p-3">
                         <div class="d-flex justify-content-between">
-                            <h6 class="mb-2">Sales by Country</h6>
+                            <marquee behavior="" direction="horizontal"><h6 class="mb-2"> &#9917; OnGoing Games</h6></marquee> 
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -314,7 +314,7 @@
             <div class="col-lg-5">
                 <div class="card">
                     <div class="card-header pb-0 p-3">
-                        <h6 class="mb-0">Categories</h6>
+                        <h6 class="mb-0">Bet Slip</h6>
                     </div>
                     <div class="card-body p-3">
                         <ul class="list-group">
@@ -413,7 +413,7 @@
                     tension: 0.4,
                     borderWidth: 0,
                     pointRadius: 0,
-                    borderColor: "#fb6340",
+                    borderColor: "#2d2baf",
                     backgroundColor: gradientStroke1,
                     borderWidth: 3,
                     fill: true,
