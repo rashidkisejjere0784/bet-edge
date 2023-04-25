@@ -2,174 +2,202 @@
 
 @section('content')
     @include('layouts.navbars.auth.topnav', ['title' => 'Virtual Reality'])
-    <div class="border-radius-xl mt-4 mx-4 position-relative"
-        style="background-image: url('/img/vr-bg.jpg') ; background-size: cover;">
-        @include('layouts.navbars.auth.sidenav')
-        <main class="main-content mt-1 border-radius-lg">
-            <div class="section min-vh-85 position-relative transform-scale-0 transform-scale-md-7">
-                <div class="container">
-                    <div class="row pt-10">
-                        <div class="col-lg-1 col-md-1 pt-5 pt-lg-0 ms-lg-5 text-center">
-                            <a href="javascript:;" class="avatar avatar-md border-0 d-block mb-2" data-bs-toggle="tooltip"
-                                data-bs-placement="left" title="My Profile">
-                                <img class="border-radius-lg" alt="Image placeholder" src="/img/team-1.jpg">
-                            </a>
-                            <button class="btn btn-white border-radius-lg p-2 mt-0 mt-md-2 d-block mx-2 mx-md-0"
-                                type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Home">
-                                <i class="fas fa-home p-2"></i>
-                            </button>
-                            <button class="btn btn-white border-radius-lg p-2 d-block" type="button"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Search">
-                                <i class="fas fa-search p-2"></i>
-                            </button>
-                            <button class="btn btn-white border-radius-lg p-2 d-block ms-2 ms-md-0" type="button"
-                                data-bs-toggle="tooltip" data-bs-placement="left" title="Minimize">
-                                <i class="fas fa-ellipsis-h p-2"></i>
-                            </button>
+    <div class="card shadow-lg mx-4 card-profile-bottom">
+        <div class="card-body p-3">
+            <div class="row gx-4">
+                <div class="col-auto">
+                    <div class="avatar avatar-xl position-relative">
+                        <img src="/img/team-1.jpg" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                    </div>
+                </div>
+                <div class="col-auto my-auto">
+                    <div class="h-100">
+                        <h5 class="mb-1">
+                            {{ auth()->user()->firstname ?? 'Firstname' }} {{ auth()->user()->lastname ?? 'Lastname' }}
+                        </h5>
+                        <p class="mb-0 font-weight-bold text-sm">
+                            Public Relations
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+                    <div class="nav-wrapper position-relative end-0">
+                        <ul class="nav nav-pills nav-fill p-1" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link mb-0 px-0 py-1 active d-flex align-items-center justify-content-center "
+                                    data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
+                                    <i class="ni ni-app"></i>
+                                    <span class="ms-2">App</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center "
+                                    data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
+                                    <i class="ni ni-email-83"></i>
+                                    <span class="ms-2">Messages</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center "
+                                    data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false">
+                                    <i class="ni ni-settings-gear-65"></i>
+                                    <span class="ms-2">Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alert">
+        @include('components.alert')
+    </div>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <form role="form" method="POST" action={{ route('profile.update') }} enctype="multipart/form-data">
+                        @csrf
+                        <div class="card-header pb-0">
+                            <div class="d-flex align-items-center">
+                                <p class="mb-0">Edit Profile</p>
+                                <button type="submit" class="btn btn-primary btn-sm ms-auto">Save</button>
+                            </div>
                         </div>
-                        <div class="col-lg-8 col-md-11">
-                            <div class="d-flex">
-                                <div class="me-auto">
-                                    <h1 class="display-1 font-weight-bold mb-0">12°C</h1>
-                                    <h6 class="text-uppercase mb-0 ms-1">Cloudy</h6>
+                        <div class="card-body">
+                            <p class="text-uppercase text-sm">User Information</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">Username</label>
+                                        <input class="form-control" type="text" name="username" value="{{ old('username', auth()->user()->username) }}">
+                                    </div>
                                 </div>
-                                <div class="ms-auto">
-                                    <img class="w-50 float-end mt-md-n5" src="/img/small-logos/icon-sun-cloud.png"
-                                        alt="image sun">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">Email address</label>
+                                        <input class="form-control" type="email" name="email" value="{{ old('email', auth()->user()->email) }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">First name</label>
+                                        <input class="form-control" type="text" name="firstname"  value="{{ old('firstname', auth()->user()->firstname) }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">Last name</label>
+                                        <input class="form-control" type="text" name="lastname" value="{{ old('lastname', auth()->user()->lastname) }}">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mt-4">
-                                <div class="col-lg-4 col-md-4">
-                                    <div class="card move-on-hover overflow-hidden">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <h6 class="mb-0 me-3">08:00</h6>
-                                                <h6 class="mb-0">Synk up with Mark
-                                                    <small class="text-secondary font-weight-normal">Hangouts</small>
-                                                </h6>
-                                            </div>
-                                            <hr class="horizontal dark">
-                                            <div class="d-flex">
-                                                <h6 class="mb-0 me-3">09:30</h6>
-                                                <h6 class="mb-0">Gym <br />
-                                                    <small class="text-secondary font-weight-normal">World Class</small>
-                                                </h6>
-                                            </div>
-                                            <hr class="horizontal dark">
-                                            <div class="d-flex">
-                                                <h6 class="mb-0 me-3">11:00</h6>
-                                                <h6 class="mb-0">Design Review<br />
-                                                    <small class="text-secondary font-weight-normal">Zoom</small>
-                                                </h6>
-                                            </div>
-                                        </div>
-                                        <a href="javascript:;" class="bg-gray-100 w-100 text-center py-1"
-                                            data-bs-toggle="tooltip" data-bs-placement="top" title="Show More">
-                                            <i class="fas fa-chevron-down text-primary"></i>
-                                        </a>
+                            <hr class="horizontal dark">
+                            <p class="text-uppercase text-sm">Contact Information</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">Address</label>
+                                        <input class="form-control" type="text" name="address"
+                                            value="{{ old('address', auth()->user()->address) }}">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 mt-4 mt-sm-0">
-                                    <div class="card bg-gradient-dark move-on-hover">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <h5 class="mb-0 text-white">To Do</h5>
-                                                <div class="ms-auto">
-                                                    <h1 class="text-white text-end mb-0 mt-n2">7</h1>
-                                                    <p class="text-sm mb-0 text-white">items</p>
-                                                </div>
-                                            </div>
-                                            <p class="text-white mb-0">Shopping</p>
-                                            <p class="mb-0 text-white">Meeting</p>
-                                        </div>
-                                        <a href="javascript:;" class="w-100 text-center py-1" data-bs-toggle="tooltip"
-                                            data-bs-placement="top" title="Show More">
-                                            <i class="fas fa-chevron-down text-white"></i>
-                                        </a>
-                                    </div>
-                                    <div class="card move-on-hover mt-4">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <p class="mb-0">Emails (21)</p>
-                                                <a href="javascript:;" class="ms-auto" data-bs-toggle="tooltip"
-                                                    data-bs-placement="top" title="Check your emails">
-                                                    Check
-                                                </a>
-                                            </div>
-                                        </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">City</label>
+                                        <input class="form-control" type="text" name="city" value="{{ old('city', auth()->user()->city) }}">
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-md-4 mt-4 mt-sm-0">
-                                    <div
-                                        class="card card-background card-background-mask-primary move-on-hover align-items-start">
-                                        <div class="cursor-pointer">
-                                            <div class="full-background"
-                                                style="background-image: url('https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2370&q=80')">
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="text-white mb-0">Some Kind Of Blues</h5>
-                                                <p class="text-white text-sm">Deftones</p>
-                                                <div class="d-flex mt-5">
-                                                    <button class="btn btn-outline-white rounded-circle p-2 mb-0"
-                                                        type="button" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Prev">
-                                                        <i class="fas fa-backward p-2"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-white rounded-circle p-2 mx-2 mb-0"
-                                                        type="button" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Pause">
-                                                        <i class="fas fa-play p-2"></i>
-                                                    </button>
-                                                    <button class="btn btn-outline-white rounded-circle p-2 mb-0"
-                                                        type="button" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        title="Next">
-                                                        <i class="fas fa-forward p-2"></i>
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card move-on-hover mt-4 mb-4 mb-md-0 mt-md-4">
-                                        <div class="card-body">
-                                            <div class="d-flex">
-                                                <p class="my-auto">Messages</p>
-                                                <div class="ms-auto">
-                                                    <div class="avatar-group">
-                                                        <a href="javascript:;"
-                                                            class="avatar avatar-sm border-0 rounded-circle"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="2 New Messages">
-                                                            <img alt="Image placeholder" src="/img/team-1.jpg">
-                                                        </a>
-                                                        <a href="javascript:;"
-                                                            class="avatar avatar-sm border-0 rounded-circle"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="1 New Message">
-                                                            <img alt="Image placeholder" src="/img/team-2.jpg">
-                                                        </a>
-                                                        <a href="javascript:;"
-                                                            class="avatar avatar-sm border-0 rounded-circle"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="13 New Messages">
-                                                            <img alt="Image placeholder" src="/img/team-3.jpg">
-                                                        </a>
-                                                        <a href="javascript:;"
-                                                            class="avatar avatar-sm border-0 rounded-circle"
-                                                            data-bs-toggle="tooltip" data-bs-placement="top"
-                                                            title="7 New Messages">
-                                                            <img alt="Image placeholder" src="/img/team-4.jpg">
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">Country</label>
+                                        <input class="form-control" type="text" name="country" value="{{ old('country', auth()->user()->country) }}">
                                     </div>
                                 </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">Postal code</label>
+                                        <input class="form-control" type="text" name="postal" value="{{ old('postal', auth()->user()->postal) }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="horizontal dark">
+                            <p class="text-uppercase text-sm">About me</p>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="example-text-input" class="form-control-label">About me</label>
+                                        <input class="form-control" type="text" name="about"
+                                            value="{{ old('about', auth()->user()->about) }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <img src="/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top">
+                    <div class="row justify-content-center">
+                        <div class="col-4 col-lg-4 order-lg-2">
+                            <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
+                                <a href="javascript:;">
+                                    <img src="/img/team-2.jpg"
+                                        class="rounded-circle img-fluid border border-2 border-white">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
+                        <div class="d-flex justify-content-between">
+                            <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block">Connect</a>
+                            <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-block d-lg-none"><i
+                                    class="ni ni-collection"></i></a>
+                            <a href="javascript:;"
+                                class="btn btn-sm btn-dark float-right mb-0 d-none d-lg-block">Message</a>
+                            <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-block d-lg-none"><i
+                                    class="ni ni-email-83"></i></a>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="row">
+                            <div class="col">
+                                <div class="d-flex justify-content-center">
+                                    <div class="d-grid text-center">
+                                        <span class="text-lg font-weight-bolder">22</span>
+                                        <span class="text-sm opacity-8">Friends</span>
+                                    </div>
+                                    <div class="d-grid text-center mx-4">
+                                        <span class="text-lg font-weight-bolder">10</span>
+                                        <span class="text-sm opacity-8">Photos</span>
+                                    </div>
+                                    <div class="d-grid text-center">
+                                        <span class="text-lg font-weight-bolder">89</span>
+                                        <span class="text-sm opacity-8">Comments</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <h5>
+                                Mark Davis<span class="font-weight-light">, 35</span>
+                            </h5>
+                            <div class="h6 font-weight-300">
+                                <i class="ni location_pin mr-2"></i>Bucharest, Romania
+                            </div>
+                            <div class="h6 mt-4">
+                                <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+                            </div>
+                            <div>
+                                <i class="ni education_hat mr-2"></i>University of Computer Science
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+        @include('layouts.footers.auth.footer')
     </div>
 @endsection

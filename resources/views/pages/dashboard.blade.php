@@ -126,7 +126,7 @@
                     <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
                         <div class="carousel-inner border-radius-lg h-100">
                             <div class="carousel-item h-100 active" style="background-image: url('./img/football/football (1).jpg');
-            background-size: cover;">
+                background-size: cover;">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                                         <i class="ni ni-camera-compact text-dark opacity-10"></i>
@@ -136,7 +136,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item h-100" style="background-image: url('./img/football/football (3).jpg');
-            background-size: cover;">
+                background-size: cover;">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                                         <i class="ni ni-bulb-61 text-dark opacity-10"></i>
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="carousel-item h-100" style="background-image: url('./img/football/football (5).jpg');
-            background-size: cover;">
+                background-size: cover;">
                                 <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
                                     <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
                                         <i class="ni ni-trophy text-dark opacity-10"></i>
@@ -324,6 +324,8 @@
                                         <i class="ni ni-mobile-button text-white opacity-10"></i>
                                     </div>
                                     <div class="d-flex flex-column">
+                                        <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                            class="far fa-trash-alt me-2"></i>Delete</a>
                                         <h6 class="mb-1 text-dark text-sm">Devices</h6>
                                         <span class="text-xs">250 in stock, <span class="font-weight-bold">346+
                                                 sold</span></span>
