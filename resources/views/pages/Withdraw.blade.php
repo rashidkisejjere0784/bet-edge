@@ -11,27 +11,90 @@
                              <marquee behavior="" direction="horizontal"><h3 class="mb-0">Withdraw Money</h3></marquee>    
                         </div>
                     </div>
-                    <div class="card-body pt-4 p-3 w-50 d-flex justify-content-center">
-                        <div class="card bg-transparent shadow-xl">
-                            <div class="overflow-hidden position-relative border-radius-xl"
-                                style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/card-visa.jpg');">
-                                <span class="mask bg-gradient-dark"></span>
-                                <div class="card-body position-relative z-index-1 p-3">
-                                    <i class="fas fa-wifi text-white p-2"></i>
-                                    <h5 class="text-white mt-4 mb-5 pb-2">
-                                        Current Amount - &nbsp;&nbsp;&nbsp;7852 /=</h5>
-                                    <div class="d-flex">
-                                        <div class="d-flex">
-                                            <div class="me-4">
-                                                <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
-                                                <h6 class="text-white mb-0">Jack Peterson</h6>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="card-body">
+                                <div class="card bg-transparent shadow-xl w-100">
+                                    <div class="overflow-hidden position-relative border-radius-xl"
+                                        style="background-image: url('https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/card-visa.jpg');">
+                                        <span class="mask bg-gradient-dark"></span>
+                                        <div class="card-body position-relative z-index-1 p-3">
+                                            <i class="fas fa-wifi text-white p-2"></i>
+                                            <h5 class="text-white mt-4 mb-5 pb-2">
+                                                Current Amount - &nbsp;&nbsp;&nbsp;7852 /=</h5>
+                                            <div class="d-flex">
+                                                <div class="d-flex">
+                                                    <div class="me-4">
+                                                        <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
+                                                        <h6 class="text-white mb-0">Jack Peterson</h6>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
+                                                    <img class="w-60 mt-2" src="/img/logos/mastercard.png" alt="logo">
+                                                </div>
                                             </div>
-                                            
-                                        </div>
-                                        <div class="ms-auto w-20 d-flex align-items-end justify-content-end">
-                                            <img class="w-60 mt-2" src="/img/logos/mastercard.png" alt="logo">
                                         </div>
                                     </div>
+                                </div>
+        
+        
+                                <form action="" method="post" class="mt-5">
+                                    <h4 class="text-uppercase">Minimum Withdraw : 500/=</h4>
+        
+                                    <input type="text" class="form-control mb-3" placeholder="Amount">
+        
+                                    <input type="submit" class="btn btn-primary" value="Withdraw">
+        
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="card card-carousel overflow-hidden h-100 p-0">
+                                <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+                                    <div class="carousel-inner border-radius-lg h-100">
+                                        <div class="carousel-item h-100 active" style="background-image: url('./img/football/football (1).jpg');
+                            background-size: cover;">
+                                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                                    <i class="ni ni-camera-compact text-dark opacity-10"></i>
+                                                </div>
+                                                <h5 class="text-white mb-1">Get started with BetEdge</h5>
+                                                <p>There’s nothing I really wanted to do in life that I wasn’t able to get good at.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item h-100" style="background-image: url('./img/football/football (3).jpg');
+                            background-size: cover;">
+                                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                                    <i class="ni ni-bulb-61 text-dark opacity-10"></i>
+                                                </div>
+                                                <h5 class="text-white mb-1">Faster way to create web pages</h5>
+                                                <p>That’s my skill. I’m not really specifically talented at anything except for the
+                                                    ability to learn.</p>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item h-100" style="background-image: url('./img/football/football (5).jpg');
+                            background-size: cover;">
+                                            <div class="carousel-caption d-none d-md-block bottom-0 text-start start-0 ms-5">
+                                                <div class="icon icon-shape icon-sm bg-white text-center border-radius-md mb-3">
+                                                    <i class="ni ni-trophy text-dark opacity-10"></i>
+                                                </div>
+                                                <h5 class="text-white mb-1">Share with us your design tips!</h5>
+                                                <p>Don’t be afraid to be wrong because you can’t learn anything from a compliment.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev w-5 me-3" type="button"
+                                        data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next w-5 me-3" type="button"
+                                        data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
                                 </div>
                             </div>
                         </div>
