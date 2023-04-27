@@ -164,18 +164,35 @@
                                     <h4 class="text-uppercase">Man-U</h4>
                                 </div>
                                 <div class="ms-auto">
-                                    <h6>Select market</h6>
-                                    {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                    <button class="btn btn-primary">1</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                    <button class="btn bg-dark">X</button>
-                                    <button class="btn bg-danger">2</button>
-                                    <button class="btn btn-secondary">BTTS</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                    <div>
+                                        <h6>Select market</h6>
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <button class="btn btn-primary text-white">1</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
                                                 class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <button class="btn bg-dark text-white">X</button>
+                                        <button class="btn bg-danger text-white">2</button>
+                                        <button class="btn btn-secondary text-white">BTTS</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                    class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+                            
+                                    </div>
+                                    <div>
+                                        
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <span class = "text-primary mx-2">1.24</span>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <span class = "text-bg mx-2">1.24</span>
+                                        <span class = "text-danger mx-2">1.24</span>
+                                        <span class = "text-secondary mx-2">1.24</span>
+                                    
+                            
+                                    </div>
                                 </div>
                             </li>
                             <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
@@ -185,18 +202,35 @@
                                     <h4 class="text-uppercase">Man-U</h4>
                                 </div>
                                 <div class="ms-auto">
-                                    <h6>Select market</h6>
-                                    {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                    <button class="btn btn-primary">1</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                    <button class="btn bg-dark">X</button>
-                                    <button class="btn bg-danger">2</button>
-                                    <button class="btn btn-secondary">BTTS</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                    <div>
+                                        <h6>Select market</h6>
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <button class="btn btn-primary text-white">1</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
                                                 class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <button class="btn bg-dark text-white">X</button>
+                                        <button class="btn bg-danger text-white">2</button>
+                                        <button class="btn btn-secondary text-white">BTTS</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                    class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+                            
+                                    </div>
+                                    <div>
+                                        
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <span class = "text-primary mx-2">1.24</span>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <span class = "text-bg mx-2">1.24</span>
+                                        <span class = "text-danger mx-2">1.24</span>
+                                        <span class = "text-secondary mx-2">1.24</span>
+                                    
+                            
+                                    </div>
                                 </div>
                             </li>
                             <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
@@ -206,18 +240,35 @@
                                     <h4 class="text-uppercase">Man-U</h4>
                                 </div>
                                 <div class="ms-auto">
-                                    <h6>Select market</h6>
-                                    {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                    <button class="btn btn-primary">1</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                    <button class="btn bg-dark">X</button>
-                                    <button class="btn bg-danger">2</button>
-                                    <button class="btn btn-secondary">BTTS</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                    <div>
+                                        <h6>Select market</h6>
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <button class="btn btn-primary text-white">1</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
                                                 class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <button class="btn bg-dark text-white">X</button>
+                                        <button class="btn bg-danger text-white">2</button>
+                                        <button class="btn btn-secondary text-white">BTTS</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                    class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+                            
+                                    </div>
+                                    <div>
+                                        
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <span class = "text-primary mx-2">1.24</span>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <span class = "text-bg mx-2">1.24</span>
+                                        <span class = "text-danger mx-2">1.24</span>
+                                        <span class = "text-secondary mx-2">1.24</span>
+                                    
+                            
+                                    </div>
                                 </div>
                             </li>
                             <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
@@ -227,18 +278,35 @@
                                     <h4 class="text-uppercase">Man-U</h4>
                                 </div>
                                 <div class="ms-auto">
-                                    <h6>Select market</h6>
-                                    {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                            class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                    <button class="btn btn-primary">1</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                            class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                    <button class="btn bg-dark">X</button>
-                                    <button class="btn bg-danger">2</button>
-                                    <button class="btn btn-secondary">BTTS</button>
-                                    {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                    <div>
+                                        <h6>Select market</h6>
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <button class="btn btn-primary text-white">1</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
                                                 class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <button class="btn bg-dark text-white">X</button>
+                                        <button class="btn bg-danger text-white">2</button>
+                                        <button class="btn btn-secondary text-white">BTTS</button>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                    class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+                            
+                                    </div>
+                                    <div>
+                                        
+                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
+                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
+                                        <span class = "text-primary mx-2">1.24</span>
+                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
+                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+
+                                        <span class = "text-bg mx-2">1.24</span>
+                                        <span class = "text-danger mx-2">1.24</span>
+                                        <span class = "text-secondary mx-2">1.24</span>
+                                    
+                            
+                                    </div>
                                 </div>
                             </li>
                         </ul>
