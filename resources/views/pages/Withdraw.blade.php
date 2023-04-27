@@ -26,7 +26,7 @@
                                                 <div class="d-flex">
                                                     <div class="me-4">
                                                         <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
-                                                        <h6 class="text-white mb-0">Jack Peterson</h6>
+                                                        <h6 class="text-white mb-0">Nasser Kimbugwe</h6>
                                                     </div>
                                                     
                                                 </div>
