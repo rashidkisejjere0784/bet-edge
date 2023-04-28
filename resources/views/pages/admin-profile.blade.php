@@ -7,7 +7,7 @@
             <div class="row gx-4">
                 <div class="col-auto">
                     <div class="avatar avatar-xl position-relative" >
-                        <img src="./img/user.png" alt="blank profile">
+                    <img src="./img/user.png" alt="blank profile">
                     </div>
                 </div>
                 <div class="col-auto my-auto">
@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <form role="form" method="POST" action={{ route('profile.update') }} enctype="multipart/form-data">
+                    <form role="form" method="POST" action="" enctype="multipart/form-data">
                         @csrf
                         <div class="card-header pb-0">
                             <div class="d-flex align-items-center">
@@ -38,11 +38,11 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <p class="text-uppercase text-sm">User Information</p>
+                            <p class="text-uppercase text-sm">Admin Information</p>
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="example-text-input" class="form-control-label">Username</label>
+                                        <label for="example-text-input" class="form-control-label">Admin name</label>
                                         <input class="form-control" type="text" name="username" value="{{ old('username', auth()->user()->username) }}">
                                     </div>
                                 </div>

@@ -39,7 +39,8 @@
                                 </div>
         
         
-                                <form action="" method="post" class="mt-5">
+                                <form action="withdraw_db.php" method="post" class="mt-5">
+                                    
                                     <h4 class="text-uppercase">Minimum Withdraw : 500/=</h4>
         
                                     <input type="text" class="form-control mb-3" placeholder="Amount">

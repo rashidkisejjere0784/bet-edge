@@ -39,13 +39,14 @@
                                 </div>
         
         
-                                <form action="" method="post" class="mt-5">
-                                    <h4 class="text-uppercase">Minimum Depost : 500/=</h4>
+                                <form action="deposit_db.php" method="post" class="mt-5">
+                            
+                                   <h4 class="text-uppercase">Minimum Depost : 500/=</h4>
         
                                     <input type="text" class="form-control mb-3" placeholder="Amount">
         
                                     <input type="submit" class="btn btn-primary" value="Deposit">
-        
+                                    
                                 </form>
                             </div>
                         </div>
