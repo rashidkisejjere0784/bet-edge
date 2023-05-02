@@ -14,12 +14,12 @@
                                 <div class="card-body position-relative z-index-1 p-3">
                                     <i class="fas fa-wifi text-white p-2"></i>
                                     <h5 class="text-white mt-4 mb-5 pb-2">
-                                        Current Amount - &nbsp;&nbsp;&nbsp;7852 /=</h5>
+                                        Current Amount - &nbsp;&nbsp;&nbsp;{{auth()->user()->amount}} /=</h5>
                                     <div class="d-flex">
                                         <div class="d-flex">
                                             <div class="me-4">
                                                 <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
-                                                <h6 class="text-white mb-0">Nasser Kimbumgwe</h6>
+                                                <h6 class="text-white mb-0">{{auth()->user()->firstname . " " . auth()->user()->lastname}}</h6>
                                             </div>
                                             
                                         </div>
@@ -156,12 +156,14 @@
                        
                     </div>
                     <div class="card-body pt-4 p-3">
+                        @if(count($games) > 0)
                         <ul class="list-group">
+                            @foreach ($games as $game)
                             <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
                                 <div class="d-flex flex-column">
-                                    <h4 class="text-uppercase">Chelsea</h4>
+                                    <h4 class="text-uppercase">{{$game['teamOne']}}</h4>
                                     <small class="text-sm font-weight-bold">Vs</small>
-                                    <h4 class="text-uppercase">Man-U</h4>
+                                    <h4 class="text-uppercase"> {{$game['teamTwo']}} </h4>
                                 </div>
                                 <div class="ms-auto">
                                     <div>
@@ -183,133 +185,25 @@
                                         
                                         {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
                                                 class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <span class = "text-primary mx-2">1.24</span>
+                                        <span class = "text-primary text-center mx-2"> {{$game['oddOne']}} </span>
                                         {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
                                                 class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
 
-                                        <span class = "text-bg mx-2">1.24</span>
-                                        <span class = "text-danger mx-2">1.24</span>
-                                        <span class = "text-secondary mx-2">1.24</span>
+                                        <span class = "text-bg text-center mx-2"> {{$game['oddX']}} </span>
+                                        <span class = "text-danger text-center mx-2"> {{$game['oddTwo']}} </span>
+                                        <span class = "text-secondary text-center mx-2"> {{$game['oddBTTS']}} </span>
                                     
                             
                                     </div>
                                 </div>
-                            </li>
-                            <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                                <div class="d-flex flex-column">
-                                    <h4 class="text-uppercase">Chelsea</h4>
-                                    <small class="text-sm font-weight-bold">Vs</small>
-                                    <h4 class="text-uppercase">Man-U</h4>
-                                </div>
-                                <div class="ms-auto">
-                                    <div>
-                                        <h6>Select market</h6>
-                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <button class="btn btn-primary text-white">1</button>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                        <button class="btn bg-dark text-white">X</button>
-                                        <button class="btn bg-danger text-white">2</button>
-                                        <button class="btn btn-secondary text-white">BTTS</button>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                    class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
+                            </li> 
+                            @endforeach
                             
-                                    </div>
-                                    <div>
-                                        
-                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <span class = "text-primary mx-2">1.24</span>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                        <span class = "text-bg mx-2">1.24</span>
-                                        <span class = "text-danger mx-2">1.24</span>
-                                        <span class = "text-secondary mx-2">1.24</span>
-                                    
                             
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                                <div class="d-flex flex-column">
-                                    <h4 class="text-uppercase">Chelsea</h4>
-                                    <small class="text-sm font-weight-bold">Vs</small>
-                                    <h4 class="text-uppercase">Man-U</h4>
-                                </div>
-                                <div class="ms-auto">
-                                    <div>
-                                        <h6>Select market</h6>
-                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <button class="btn btn-primary text-white">1</button>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                        <button class="btn bg-dark text-white">X</button>
-                                        <button class="btn bg-danger text-white">2</button>
-                                        <button class="btn btn-secondary text-white">BTTS</button>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                    class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-                            
-                                    </div>
-                                    <div>
-                                        
-                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <span class = "text-primary mx-2">1.24</span>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                        <span class = "text-bg mx-2">1.24</span>
-                                        <span class = "text-danger mx-2">1.24</span>
-                                        <span class = "text-secondary mx-2">1.24</span>
-                                    
-                            
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
-                                <div class="d-flex flex-column">
-                                    <h4 class="text-uppercase">Chelsea</h4>
-                                    <small class="text-sm font-weight-bold">Vs</small>
-                                    <h4 class="text-uppercase">Man-U</h4>
-                                </div>
-                                <div class="ms-auto">
-                                    <div>
-                                        <h6>Select market</h6>
-                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <button class="btn btn-primary text-white">1</button>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                        <button class="btn bg-dark text-white">X</button>
-                                        <button class="btn bg-danger text-white">2</button>
-                                        <button class="btn btn-secondary text-white">BTTS</button>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                    class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-                            
-                                    </div>
-                                    <div>
-                                        
-                                        {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
-                                                class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <span class = "text-primary mx-2">1.24</span>
-                                        {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
-                                                class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
-
-                                        <span class = "text-bg mx-2">1.24</span>
-                                        <span class = "text-danger mx-2">1.24</span>
-                                        <span class = "text-secondary mx-2">1.24</span>
-                                    
-                            
-                                    </div>
-                                </div>
-                            </li>
                         </ul>
+                        @else
+                        <h5 class="text-center">No on going games</h5>
+                        @endif
                     </div>
                 </div>
             </div>

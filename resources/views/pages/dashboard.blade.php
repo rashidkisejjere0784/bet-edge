@@ -103,39 +103,41 @@
                         </div>
                     </div>
                     <div class="table-responsive">
+                        @if( count($games) > 0)
                         <table class="table">
                             <tbody class="p-2">
+                                @foreach ($games as $game)
                                 <tr>
                                     <td class="">
                                         <div class="d-flex py-1">
-                                            <div class="">
+                                            <div class="text-center">
                                                 <h4 class="text-xs font-weight-bold mb-0">Game:</h4>
-                                                <h6 class="mb-0">Chelsea Vs Arsenal</h6>
+                                                <h6 class="mb-0">{{$game['teamOne']}} Vs {{$game['teamTwo']}}</h6>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="">
+                                        <div class="text-center">
                                             <p class="text-xs font-weight-bold mb-0">Market 1 ODD</p>
-                                            <h6 class="text-sm mb-0">2.5</h6>
+                                            <h6 class="text-sm mb-0">{{$game['oddOne']}} </h6>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="">
+                                        <div class="text-center">
                                             <p class="text-xs font-weight-bold mb-0">Market X ODD</p>
-                                            <h6 class="text-sm mb-0">1.5</h6>
+                                            <h6 class="text-sm mb-0">{{$game['oddX']}}</h6>
                                         </div>
                                     </td>
                                     <td class="text-sm">
-                                        <div class="col ">
+                                        <div class="col text-center">
                                             <p class="text-xs font-weight-bold mb-0">Market 2 ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
+                                            <h6 class="text-sm mb-0"> {{$game['oddTwo']}} </h6>
                                         </div>
                                     </td>
                                     <td class="text-sm">
                                         <div class="col text-center">
                                             <p class="text-xs font-weight-bold mb-0">Market BBTS ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
+                                            <h6 class="text-sm mb-0"> {{$game['oddBTTS']}} </h6>
                                         </div>
                                     </td>
                                     <td class="text-sm">
@@ -145,7 +147,7 @@
                                             </p>
                                             <div class="row">
                                                 <form action="" class="p-2" method="post">
-                                                    <input type="text" name="gameID" value="1" class="d-none">
+                                                    <input type="text" name="gameID" value="{{$game['id']}}" class="d-none">
                                                     <input type="checkbox" class="" name="market1" id="">
                                                     <label for="">1</label>
                                                     <input type="checkbox" name="marketX" id="">
@@ -161,176 +163,14 @@
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td class="">
-                                        <div class="d-flex py-1">
-                                            <div class="">
-                                                <h4 class="text-xs font-weight-bold mb-0">Game:</h4>
-                                                <h6 class="mb-0">Chelsea Vs Arsenal</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="">
-                                            <p class="text-xs font-weight-bold mb-0">Market 1 ODD</p>
-                                            <h6 class="text-sm mb-0">2.5</h6>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="">
-                                            <p class="text-xs font-weight-bold mb-0">Market X ODD</p>
-                                            <h6 class="text-sm mb-0">1.5</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col ">
-                                            <p class="text-xs font-weight-bold mb-0">Market 2 ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col text-center">
-                                            <p class="text-xs font-weight-bold mb-0">Market BBTS ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col text-center">
-                                            <p class="text-xs font-weight-bold mb-0">
-                                                Select Wining Market
-                                            </p>
-                                            <div class="row">
-                                                <form action="" class="p-2" method="post">
-                                                    <input type="text" name="gameID" value="1" class="d-none">
-                                                    <input type="checkbox" class="" name="market1" id="">
-                                                    <label for="">1</label>
-                                                    <input type="checkbox" name="marketX" id="">
-                                                    <label for="">X</label>
-                                                    <input type="checkbox" name="market2" id="">
-                                                    <label for="">2</label>
-                                                    <input type="checkbox" name="market BTTS" id="">
-                                                    <label for="">BTTS</label>
-                                                    <br>
-                                                    <input type="submit" class="btn btn-success" value="Stop Game">
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="">
-                                        <div class="d-flex py-1">
-                                            <div class="">
-                                                <h4 class="text-xs font-weight-bold mb-0">Game:</h4>
-                                                <h6 class="mb-0">Chelsea Vs Arsenal</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="">
-                                            <p class="text-xs font-weight-bold mb-0">Market 1 ODD</p>
-                                            <h6 class="text-sm mb-0">2.5</h6>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="">
-                                            <p class="text-xs font-weight-bold mb-0">Market X ODD</p>
-                                            <h6 class="text-sm mb-0">1.5</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col ">
-                                            <p class="text-xs font-weight-bold mb-0">Market 2 ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col text-center">
-                                            <p class="text-xs font-weight-bold mb-0">Market BBTS ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col text-center">
-                                            <p class="text-xs font-weight-bold mb-0">
-                                                Select Wining Market
-                                            </p>
-                                            <div class="row">
-                                                <form action="" class="p-2" method="post">
-                                                    <input type="text" name="gameID" value="1" class="d-none">
-                                                    <input type="checkbox" class="" name="market1" id="">
-                                                    <label for="">1</label>
-                                                    <input type="checkbox" name="marketX" id="">
-                                                    <label for="">X</label>
-                                                    <input type="checkbox" name="market2" id="">
-                                                    <label for="">2</label>
-                                                    <input type="checkbox" name="market BTTS" id="">
-                                                    <label for="">BTTS</label>
-                                                    <br>
-                                                    <input type="submit" class="btn btn-success" value="Stop Game">
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="">
-                                        <div class="d-flex py-1">
-                                            <div class="">
-                                                <h4 class="text-xs font-weight-bold mb-0">Game:</h4>
-                                                <h6 class="mb-0">Chelsea Vs Arsenal</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="">
-                                            <p class="text-xs font-weight-bold mb-0">Market 1 ODD</p>
-                                            <h6 class="text-sm mb-0">2.5</h6>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="">
-                                            <p class="text-xs font-weight-bold mb-0">Market X ODD</p>
-                                            <h6 class="text-sm mb-0">1.5</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col ">
-                                            <p class="text-xs font-weight-bold mb-0">Market 2 ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col text-center">
-                                            <p class="text-xs font-weight-bold mb-0">Market BBTS ODD</p>
-                                            <h6 class="text-sm mb-0">2.9</h6>
-                                        </div>
-                                    </td>
-                                    <td class="text-sm">
-                                        <div class="col text-center">
-                                            <p class="text-xs font-weight-bold mb-0">
-                                                Select Wining Market
-                                            </p>
-                                            <div class="row">
-                                                <form action="" class="p-2" method="post">
-                                                    <input type="text" name="gameID" value="1" class="d-none">
-                                                    <input type="checkbox" class="" name="market1" id="">
-                                                    <label for="">1</label>
-                                                    <input type="checkbox" name="marketX" id="">
-                                                    <label for="">X</label>
-                                                    <input type="checkbox" name="market2" id="">
-                                                    <label for="">2</label>
-                                                    <input type="checkbox" name="market BTTS" id="">
-                                                    <label for="">BTTS</label>
-                                                    <br>
-                                                    <input type="submit" class="btn btn-success" value="Stop Game">
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @endforeach
+                               
+                                
                             </tbody>
                         </table>
+                        @else 
+                        <h5 class="text-center">No OnGoing Games</h5>
+                        @endif
                     </div>
                 </div>
             </div>
@@ -342,14 +182,15 @@
                 <div class="card-header">
                     <h3>Add Game</h3>
                 </div>
-                <form action="" method="post" class="mb-3">
-                    <input type="text" name="team 1" class="form-control w-30 mx-3 d-inline" placeholder="Team One" required>
-                    <input type="text" name="team 2" class="form-control w-30 mx-3 d-inline" placeholder="Team Two" required>
+                <form action="addGame" method="post" class="mb-3">
+                    @csrf
+                    <input type="text" name="teamOne" class="form-control w-30 mx-3 d-inline" placeholder="Team One" required>
+                    <input type="text" name="teamTwo" class="form-control w-30 mx-3 d-inline" placeholder="Team Two" required>
                     <h5 class="mx-3 mt-2">ODDs</h5>
-                    <input type="number" name="ODD 1" class="form-control w-10 mx-3 d-inline" placeholder="ODD One" required>
-                    <input type="number" name="ODD X" class="form-control w-10 mx-3 d-inline" placeholder="ODD X" required>
-                    <input type="number" name="ODD 2" class="form-control w-10 mx-3 d-inline" placeholder="ODD Two" required>
-                    <input type="number" name="ODD BTTS" class="form-control w-10 mx-3 d-inline" placeholder="ODD BTTS" required>
+                    <input type="text" name="oddOne" class="form-control w-10 mx-3 d-inline" placeholder="ODD One" required>
+                    <input type="text" name="oddX" class="form-control w-10 mx-3 d-inline" placeholder="ODD X" required>
+                    <input type="text" name="oddTwo" class="form-control w-10 mx-3 d-inline" placeholder="ODD Two" required>
+                    <input type="text" name="oddBTTS" class="form-control w-10 mx-3 d-inline" placeholder="ODD BTTS" required>
                     <br>
                     <input type="submit" class="btn btn-primary mt-3 mx-3" value="Add Game">
                 </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Game;
 
 class PageController extends Controller
 {
@@ -14,6 +15,11 @@ class PageController extends Controller
      */
     public function index(string $page)
     {
+        if($page == "billing"){
+            return view("pages.{$page}", [
+                "games" => Game::all()
+            ]);
+        }
         if (view()->exists("pages.{$page}")) {
             return view("pages.{$page}");
         }
