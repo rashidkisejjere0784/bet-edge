@@ -19,13 +19,10 @@ return new class extends Migration
             $table->string('firstname')->nullable();
             $table->string('lastname')->nullable();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('address')->nullable();
-            $table->string('city')->nullable();
-            $table->string('country')->nullable();
-            $table->string('postal')->nullable();
-            $table->text('about')->nullable();
+            $table->integer('amount')->default(0);
+            $table->integer('currentStake')->default(0);
+            $table->integer('currentPotentialWin')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
