@@ -295,7 +295,7 @@
 
                         <div class="p-2">
                             <h4>Total amount : 2000 /=</h4>
-                            <h4>Min Stake : 200 /=</h4>
+                            <h4>Min Stake : {{$constraint['stakeConstraint']}} /=</h4>
                         </div>
 
                         <form action="" method="post" class="m-2">

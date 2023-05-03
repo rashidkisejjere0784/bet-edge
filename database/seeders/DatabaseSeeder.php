@@ -22,5 +22,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@argon.com',
             'password' => bcrypt('secret')
         ]);
+        DB::table('constraints')->insert([
+            'depositConstraint' => 200,
+            'withdrawConstraint' => 500,
+            'stakeConstraint' => 500
+        ]);
     }
 }

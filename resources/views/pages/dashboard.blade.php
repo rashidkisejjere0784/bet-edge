@@ -204,23 +204,26 @@
                 </div>
                 <div class="px-3">
                     
-                <h5 class="">Current Minimum Deposit : 200 /=</h5>
-                <form action="" method="post">
-                    <input type="number" name="min deposit" class="form-control w-30" placeholder="Amount" required>
+                <h5 class="">Current Minimum Deposit : {{$constraint['depositConstraint']}} /=</h5>
+                <form action="dConstraint" method="post">
+                    @csrf
+                    <input type="number" name="amount" class="form-control w-30" placeholder="Amount" required>
                     <br>
                     <input type="submit" class="btn btn-primary mt-1" value="Update">
                 </form>
 
-                <h5 class="">Current Minimum Withdraw : 200 /=</h5>
-                <form action="" method="post">
-                    <input type="number" name="min Withdraw" class="form-control w-30" placeholder="Amount" required>
+                <h5 class="">Current Minimum Withdraw : {{$constraint['withdrawConstraint']}} /=</h5>
+                <form action="wConstraint" method="post">
+                    @csrf
+                    <input type="number" name="amount" class="form-control w-30" placeholder="Amount" required>
                     <br>
                     <input type="submit" class="btn btn-primary mt-1" value="Update">
                 </form>
 
-                <h5 class="">Current Minimum Stake : 200 /=</h5>
-                <form action="" method="post">
-                    <input type="number" name="min Stake" class="form-control w-30" placeholder="Amount" required>
+                <h5 class="constraints.stake">Current Minimum Stake : {{$constraint['stakeConstraint']}} /=</h5>
+                <form action="sConstraint" method="post">
+                    @csrf
+                    <input type="number" name="amount" class="form-control w-30" placeholder="Amount" required>
                     <br>
                     <input type="submit" class="btn btn-primary mt-1" value="Update">
                 </form>

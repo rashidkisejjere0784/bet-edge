@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Models\Constraint;
 
 class HomeController extends Controller
 {
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         return view('pages.dashboard', [
-            'games' => Game::all()
+            'games' => Game::all(),
+            'constraint' => Constraint::find(1)
         ]);
     }
 }

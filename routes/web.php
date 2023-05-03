@@ -26,6 +26,7 @@ use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ConstraintController;
 
 
 
@@ -52,5 +53,8 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/blog', [DepositController::class,'post']);
 
 	Route::post('/addGame', [GameController::class,'store']);
+	Route::post('/dConstraint', [ConstraintController::class,'deposit']);
+	Route::post('/wConstraint', [ConstraintController::class,'withdraw']);
+	Route::post('/sConstraint', [ConstraintController::class,'stake']);
 
 });
