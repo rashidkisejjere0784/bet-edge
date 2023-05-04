@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Constraint;
+use App\Models\User;
+
 
 class PageController extends Controller
 {
@@ -19,9 +21,16 @@ class PageController extends Controller
         if($page == "billing"){
             return view("pages.{$page}", [
                 "games" => Game::all(),
+            ]);
+        }
+
+        if($page == "user-management"){
+            return view("pages.{$page}", [
+                "users" => User::all(),
                 "constraint" => Constraint::find(1)
             ]);
         }
+
         if (view()->exists("pages.{$page}")) {
             return view("pages.{$page}");
         }
