@@ -27,7 +27,8 @@ use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConstraintController;
-use App\Http\Controllers\TransactionController;use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\TransactionController;
+use Illuminate\Support\Facades\Session;
 
 
 
