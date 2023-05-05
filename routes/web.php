@@ -28,6 +28,8 @@ use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConstraintController;
 use App\Http\Controllers\TransactionController;
+use Illuminate\Support\Facades\Session;
+
 
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
@@ -58,6 +60,29 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/dConstraint', [ConstraintController::class,'deposit']);
 	Route::post('/wConstraint', [ConstraintController::class,'withdraw']);
 	Route::post('/sConstraint', [ConstraintController::class,'stake']);
+
+
+	Route::get('stake-submit', function () {
+    Session::start();
+
+    Session::put('key', 'value');
+    $value = Session::get('key');
+    Session::forget('key');
+
+    
+    Session::flash('message', 'Your stake has been submitted!');
+
+    return redirect('dashboard');
+});
+
+	// Route::get('stake-submit', function () {
+	// 	return view('pages.stake-submit');
+
+	// 	$stake = DB::table('stake')->get();
+	// 	return view('pages.stake-submit', ['stake' => $stake]);
+
+
+	// })->name('stake-submit');
 
 	Route::post('/deposit', [TransactionController::class, 'depositTransaction']);
 	Route::post('/withdraw', [TransactionController::class, 'withdrawTransaction']);
