@@ -21,13 +21,19 @@ class PageController extends Controller
         if($page == "billing"){
             return view("pages.{$page}", [
                 "games" => Game::all(),
+                "constraint" => Constraint::find(1)
+            ]);
+        }
+
+        if($page == "Deposit" || $page == "Withdraw"){
+            return view("pages.{$page}", [
+                "constraint" => Constraint::find(1)
             ]);
         }
 
         if($page == "user-management"){
             return view("pages.{$page}", [
                 "users" => User::all(),
-                "constraint" => Constraint::find(1)
             ]);
         }
 

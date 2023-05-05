@@ -27,7 +27,7 @@ use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConstraintController;
-use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\TransactionController;use Illuminate\Support\Facades\Session;
 
 
 
@@ -83,4 +83,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 	// })->name('stake-submit');
 
+	Route::post('/deposit', [TransactionController::class, 'depositTransaction']);
+	Route::post('/withdraw', [TransactionController::class, 'withdrawTransaction']);
 });
