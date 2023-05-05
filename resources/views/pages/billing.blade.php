@@ -298,7 +298,7 @@
                             <h4>Min Stake : {{$constraint['stakeConstraint']}} /=</h4>
                         </div>
 
-                        <form action="" method="post" class="m-2">
+                        <form action="{{ route('stake-submit') }}" method="post" class="m-2">
                             <input type="text" class="form-control mb-2" placeholder="Stake">
                             <input type="Stake" value="Stake" class="btn btn-success w-30">
                         </form>
