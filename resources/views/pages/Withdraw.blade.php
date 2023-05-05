@@ -21,12 +21,12 @@
                                         <div class="card-body position-relative z-index-1 p-3">
                                             <i class="fas fa-wifi text-white p-2"></i>
                                             <h5 class="text-white mt-4 mb-5 pb-2">
-                                                Current Amount - &nbsp;&nbsp;&nbsp;7852 /=</h5>
+                                                Current Amount - &nbsp;&nbsp;&nbsp;{{auth()->user()->amount}} /=</h5>
                                             <div class="d-flex">
                                                 <div class="d-flex">
                                                     <div class="me-4">
                                                         <p class="text-white text-sm opacity-8 mb-0">Card Holder</p>
-                                                        <h6 class="text-white mb-0">Nasser Kimbugwe</h6>
+                                                        <h6 class="text-white mb-0">{{auth()->user()->firstname . " " . auth()->user()->lastname}}</h6>
                                                     </div>
                                                     
                                                 </div>
@@ -39,14 +39,16 @@
                                 </div>
         
         
-                                <form action="withdraw_db.php" method="post" class="mt-5">
+                                <form action="withdraw" method="post" class="mt-5">
+                                    @csrf
+                            
+                                   <h4 class="text-uppercase">Minimum Withdraw : {{$constraint['withdrawConstraint']}}/=</h4>
+        
+                                    <input id="amount" name="amount" type="number" class="form-control mb-3" onkeyup="Validate()" placeholder="Amount">
+                                    <p id="info" class="mt-1" style="color:gray">amount must be greater than {{$constraint['withdrawConstraint']}} and less than {{auth()->user()->amount}} </p>
+        
+                                    <input id="submitBtn" type="submit" class="btn btn-primary" value="Withdraw" disabled>
                                     
-                                    <h4 class="text-uppercase">Minimum Withdraw : 500/=</h4>
-        
-                                    <input type="text" class="form-control mb-3" placeholder="Amount">
-        
-                                    <input type="submit" class="btn btn-primary" value="Withdraw">
-        
                                 </form>
                             </div>
                         </div>
@@ -106,3 +108,20 @@
         @include('layouts.footers.auth.footer')
     </div>
 @endsection
+
+<script>
+    function Validate(){
+        let minWithdraw = {{$constraint['withdrawConstraint']}}
+        let userAmount = {{auth()->user()->amount}}
+        let inputtedAmount = document.getElementById("amount").value
+
+        if(inputtedAmount >= minWithdraw && inputtedAmount <= userAmount){
+            document.getElementById("submitBtn").disabled = false
+            document.getElementById("info").style.color = "green"
+        }
+        else{
+            document.getElementById("submitBtn").disabled = true
+            document.getElementById("info").style.color = "red"
+        }
+    }
+</script>

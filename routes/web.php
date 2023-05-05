@@ -27,7 +27,7 @@ use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConstraintController;
-
+use App\Http\Controllers\TransactionController;
 
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
@@ -59,4 +59,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/wConstraint', [ConstraintController::class,'withdraw']);
 	Route::post('/sConstraint', [ConstraintController::class,'stake']);
 
+	Route::post('/deposit', [TransactionController::class, 'depositTransaction']);
+	Route::post('/withdraw', [TransactionController::class, 'withdrawTransaction']);
 });
