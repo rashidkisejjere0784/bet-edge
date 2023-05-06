@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Constraint;
 use App\Models\User;
+use App\Models\Transaction;
 
 
 class PageController extends Controller
@@ -34,6 +35,14 @@ class PageController extends Controller
         if($page == "user-management"){
             return view("pages.{$page}", [
                 "users" => User::all(),
+            ]);
+        }
+        if($page == "Transactions"){
+            return view("pages.{$page}", [
+                "Transactions" => Transaction::select('*')
+                ->where("userId", auth()->user()->id)
+                ->get(),
+
             ]);
         }
 
