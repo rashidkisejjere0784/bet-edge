@@ -14,94 +14,62 @@
                     <div class="card-body pt-4 p-3">
                         <h6 class="text-uppercase text-body font-weight-bolder mb-3">Open</h6>
                         <ul class="list-group">
-                            
-                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                <div class="d-flex align-items-center">
-                                    <button
-                                        class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
-                                            class="fas fa-exclamation"></i></button>
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-dark text-sm">OnGoing</h6>
-                                        <h5 class="">LiverPool Vs Barcelona</h5>
+                            @foreach($History as $item)
+                                @if($item['status'] == "pending")
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <button
+                                            class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
+                                                class="fas fa-exclamation"></i></button>
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark text-sm">OnGoing</h6>
+                                            <h5 class="">{{$item['gameName']}}</h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
-                                    Pending
-                                </div>
-                            </li>
-                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                <div class="d-flex align-items-center">
-                                    <button
-                                        class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
-                                            class="fas fa-exclamation"></i></button>
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-dark text-sm">On Going</h6>
-                                        <h5 class="">LiverPool Vs Barcelona</h5>
+                                    <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
+                                        Pending
                                     </div>
-                                </div>
-                                <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
-                                    Pending
-                                </div>
-                            </li>
-                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                <div class="d-flex align-items-center">
-                                    <button
-                                        class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
-                                            class="fas fa-exclamation"></i></button>
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-dark text-sm">On Going</h6>
-                                        <h5 class="">LiverPool Vs Barcelona</h5>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
-                                    Pending
-                                </div>
-                            </li>
+                                </li>
+                                @endif
+                            @endforeach
+                           
+                        
                         </ul>
                         <h6 class="text-uppercase text-body  font-weight-bolder my-3">Closed</h6>
                         <ul class="list-group">
-                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                <div class="d-flex align-items-center">
-                                    <button
-                                        class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
-                                            class="fas fa-arrow-down"></i></button>
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-dark text-sm">Loss</h6>
-                                        <h5 >Chelsea Vs Arseneal</h5>
+                            
+                            @foreach($History as $item)
+                                @if($item['status'] == "lost")
+                                    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                        <div class="d-flex align-items-center">
+                                            <button
+                                                class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
+                                                    class="fas fa-arrow-down"></i></button>
+                                            <div class="d-flex flex-column">
+                                                <h6 class="mb-1 text-dark text-sm">Loss</h6>
+                                                <h5 >{{$item['gameName']}}</h5>
+                                            </div>
+                                        </div>
+                                        
+                                    </li>
+                                @elseif($item['status'] == "win")
+                                <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                                    <div class="d-flex align-items-center">
+                                        <button
+                                            class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
+                                                class="fas fa-arrow-up"></i></button>
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-1 text-dark text-sm">Win</h6>
+                                            <h5 class="">{{$item['gameName']}}</h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
-                                    - $ 2,500
-                                </div>
-                            </li>
-                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                <div class="d-flex align-items-center">
-                                    <button
-                                        class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
-                                            class="fas fa-arrow-up"></i></button>
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-dark text-sm">Win</h6>
-                                        <h5 class="">Germany Vs Spain</h5>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                                    + $ 750
-                                </div>
-                            </li>
-                            <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
-                                <div class="d-flex align-items-center">
-                                    <button
-                                        class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i
-                                            class="fas fa-arrow-up"></i></button>
-                                    <div class="d-flex flex-column">
-                                        <h6 class="mb-1 text-dark text-sm">Win</h6>
-                                        <h5 class="">Germany Vs Spain</h5>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
-                                    + $ 750
-                                </div>
-                            </li>
+                                    {{-- <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
+                                        + $ 750
+                                    </div> --}}
+                                </li>
+                                @endif
+                            @endforeach
+                            
                            
                         </ul>
                     </div>

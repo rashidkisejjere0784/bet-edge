@@ -146,15 +146,16 @@
                                                 Select Wining Market
                                             </p>
                                             <div class="row">
-                                                <form action="" class="p-2" method="post">
-                                                    <input type="text" name="gameID" value="{{$game['id']}}" class="d-none">
-                                                    <input type="checkbox" class="" name="market1" id="">
+                                                <form action="stopGame" class="p-2" method="post">
+                                                    @csrf
+                                                    <input type="text" name="gameId" value="{{$game['id']}}" class="d-none">
+                                                    <input type="checkbox" name="market[]" value="1" id="">
                                                     <label for="">1</label>
-                                                    <input type="checkbox" name="marketX" id="">
+                                                    <input type="checkbox" name="market[]" value="X" id="">
                                                     <label for="">X</label>
-                                                    <input type="checkbox" name="market2" id="">
+                                                    <input type="checkbox" name="market[]" value="2" id="">
                                                     <label for="">2</label>
-                                                    <input type="checkbox" name="market BTTS" id="">
+                                                    <input type="checkbox" name="market[]" value="BTTS" id="">
                                                     <label for="">BTTS</label>
                                                     <br>
                                                     <input type="submit" class="btn btn-success" value="Stop Game">

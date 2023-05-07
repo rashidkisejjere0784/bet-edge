@@ -28,6 +28,7 @@ use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConstraintController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\BetSlipController;
 
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
@@ -61,4 +62,12 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::post('/deposit', [TransactionController::class, 'depositTransaction']);
 	Route::post('/withdraw', [TransactionController::class, 'withdrawTransaction']);
+
+	Route::post('/addGameToSlip', [BetSlipController::class, 'addGame']);
+
+	Route::post('/removeFromSlip', [BetSlipController::class, 'removeGame']);
+
+	Route::post('/stake', [BetSlipController::class, 'stake']);
+
+	Route::post('/stopGame', [BetSlipController::class, 'stopGame']);
 });
