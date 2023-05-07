@@ -22,12 +22,13 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\ResetPassword;
 use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConstraintController;
-use App\Http\Controllers\TransactionController;
+
 
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
@@ -46,7 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/profile', [UserProfileController::class, 'show'])->name('profile');
 	Route::post('/profile', [UserProfileController::class, 'update'])->name('profile.update');
 	Route::get('/profiles', [AdminProfileController::class, 'show'])->name('profiles');
-	Route::post('/profiles', [AdminProfileController::class, 'updates'])->name('profiles.updates');
+	Route::post('/profiles', [AdminProfileController::class, 'update'])->name('profiles.update');
 	Route::get('/profile-static', [PageController::class, 'profile'])->name('profile-static'); 
 	Route::get('/sign-in-static', [PageController::class, 'signin'])->name('sign-in-static');
 	Route::get('/sign-up-static', [PageController::class, 'signup'])->name('sign-up-static'); 
@@ -59,6 +60,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/wConstraint', [ConstraintController::class,'withdraw']);
 	Route::post('/sConstraint', [ConstraintController::class,'stake']);
 
-	Route::post('/deposit', [TransactionController::class, 'depositTransaction']);
-	Route::post('/withdraw', [TransactionController::class, 'withdrawTransaction']);
 });
