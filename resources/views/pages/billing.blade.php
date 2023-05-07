@@ -13,8 +13,13 @@
                                 <span class="mask bg-gradient-dark"></span>
                                 <div class="card-body position-relative z-index-1 p-3">
                                     <i class="fas fa-wifi text-white p-2"></i>
-                                    <h5 class="text-white mt-4 mb-5 pb-2">
+                                    <h5 class="text-white mt-4 pb-2">
                                         Current Amount - &nbsp;&nbsp;&nbsp;{{auth()->user()->amount}} /=</h5>
+
+                                    @if(auth()->user()->currentStake != 0)
+                                        <h6 class="text-danger">Current stake - {{auth()->user()->currentStake}}</h6>
+                                    @endif
+                                    <span class="mb-5"></span>
                                     <div class="d-flex">
                                         <div class="d-flex">
                                             <div class="me-4">
@@ -170,13 +175,38 @@
                                         <h6>Select market</h6>
                                         {{-- <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i
                                                 class="far fa-trash-alt me-2"></i>Delete</a> --}}
-                                        <button class="btn btn-primary text-white">1</button>
+                                        <form action="addGameToSlip" method="post" class="d-inline">
+                                            @csrf
+                                            <input type="text" name="market" class="d-none" value="1">
+                                            <input type="text" name="gameId" class="d-none" value="{{$game['id']}}">
+                                            <input type="number" name="odd" class="d-none" value="{{$game['oddOne']}}">
+                                            <input type="submit" value="1" class="btn btn-primary text-white">
+                                        </form>
+                                        <form action="addGameToSlip" method="post" class="d-inline">
+                                            @csrf
+                                            <input type="text" name="market" class="d-none" value="X">
+                                            <input type="text" name="gameId" class="d-none" value="{{$game['id']}}">
+                                            <input type="number" name="odd" class="d-none" value="{{$game['oddX']}}">
+                                            <input type="submit" value="X" class="btn bg-dark text-white">
+                                        </form>
+                                        <form action="addGameToSlip" method="post" class="d-inline">
+                                            @csrf
+                                            <input type="text" name="market" class="d-none" value="2">
+                                            <input type="text" name="gameId" class="d-none" value="{{$game['id']}}">
+                                            <input type="number" name="odd" class="d-none" value="{{$game['oddTwo']}}">
+                                            <input type="submit" value="2" class="btn bg-danger text-white">
+                                        </form>
+                                        <form action="addGameToSlip" method="post" class="d-inline">
+                                            @csrf
+                                            <input type="text" name="market" class="d-none" value="BTTS">
+                                            <input type="text" name="gameId" class="d-none" value="{{$game['id']}}">
+                                            <input type="number" name="odd" class="d-none" value="{{$game['oddBTTS']}}">
+                                            <input type="submit" value="BTTS" class="btn btn-secondary text-white">
+                                        </form>
                                         {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
                                                 class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
 
-                                        <button class="btn bg-dark text-white">X</button>
-                                        <button class="btn bg-danger text-white">2</button>
-                                        <button class="btn btn-secondary text-white">BTTS</button>
+                        
                                         {{-- <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i
                                                     class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a> --}}
                             
@@ -233,74 +263,47 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($BetSlip as $item)
                                 <tr>
                                     <td>
                                         <div class="d-flex px-3 py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Chelsea</h6>
-                                                <h6 class="mb-0 text-sm">Man U</h6>
+                                                <h6 class="mb-0 text-sm">{{$item['gameName']}}</h6>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <button class="btn btn-primary">1</button>
+                                        <button class="btn btn-primary">{{$item['market']}}</button>
                                     </td>
                                     <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">0.5</p>
+                                        <p class="text-sm font-weight-bold mb-0">{{$item['odd']}}</p>
                                     </td>
                                     <td class="align-middle text-end">
-                                       <button class="btn btn-danger">Remove</button>
+                                        <form action="removeFromSlip" method="post" class="d-inline">
+                                            @csrf
+                                            <input type="number" name="id" value="{{$item['id']}}" class="d-none">
+                                            <input type="submit" value="Remove" class="btn btn-danger">
+                                        </form>
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-3 py-1">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Chelsea</h6>
-                                                <h6 class="mb-0 text-sm">Man U</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-primary">2</button>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">0.5</p>
-                                    </td>
-                                    <td class="align-middle text-end">
-                                       <button class="btn btn-danger">Remove</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div class="d-flex px-3 py-1">
-                                            <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Chelsea</h6>
-                                                <h6 class="mb-0 text-sm">Man U</h6>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <button class="btn btn-primary">BTTS</button>
-                                    </td>
-                                    <td class="align-middle text-center text-sm">
-                                        <p class="text-sm font-weight-bold mb-0">0.5</p>
-                                    </td>
-                                    <td class="align-middle text-end">
-                                       <button class="btn btn-danger">Remove</button>
-                                    </td>
-                                </tr>
+                                </tr>  
+
+                                @endforeach
+                            
                             </tbody>
                         </table>
 
                         <div class="p-2">
-                            <h4>Total amount : 2000 /=</h4>
-                            <h4>Min Stake : {{$constraint['stakeConstraint']}} /=</h4>
+                            <h5>Total odds - {{$totalOdds}}</h5>
+                            <h5 id="amountHeader">Pottential Winnigs - 0 /=</h5>
+                            <h5>Min Stake - {{$constraint['stakeConstraint']}} /=</h5>
                         </div>
 
-                        <form action="" method="post" class="m-2">
-                            <input type="text" class="form-control mb-2" placeholder="Stake">
-                            <input type="Stake" value="Stake" class="btn btn-success w-30">
+                        <form action="stake" method="post" class="m-2">
+                            @csrf
+                            <input id="amountInput" type="number" name="pWinning" class="d-none" value=0>
+                            <input id="stakeAmount" type="number" onkeyup="updateAmount({{$totalOdds}})" name="stakeAmount" class="form-control mb-2" placeholder="Stake">
+                            <p id="info" class="text-danger"></p>
+                            <input id="submit" type="submit" value="Stake" class="btn btn-success w-30" disabled>
                         </form>
                     </div>
                 </div>
@@ -309,3 +312,31 @@
         @include('layouts.footers.auth.footer')
     </div>
 @endsection
+
+<script>
+    function updateAmount(totalOdds){
+        
+        let amountHeader = document.getElementById("amountHeader")
+        let amountInput = document.getElementById("amountInput")
+        let stakeAmount = document.getElementById("stakeAmount")
+        let minStake = {{$constraint['stakeConstraint']}}
+
+        
+        amountInput.value = Math.round(stakeAmount.value * totalOdds)
+        amountHeader.innerText = "Pottential Winnigs - " + amountInput.value + "/="
+
+        if(stakeAmount.value >= minStake && stakeAmount.value <= {{auth()->user()->amount}}){
+            document.getElementById("submit").disabled = false
+            document.getElementById("info").innerText = ""
+        }
+        else if(stakeAmount.value > {{auth()->user()->amount}}){
+            document.getElementById("info").innerText = "Insufficient Funds"
+            document.getElementById("submit").disabled = true
+        }
+        else{
+            document.getElementById("submit").disabled = true
+            document.getElementById("info").innerText = "Amount Less than Min Stake"
+        }
+
+    }
+</script>

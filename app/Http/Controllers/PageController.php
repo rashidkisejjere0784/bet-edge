@@ -7,7 +7,7 @@ use App\Models\Game;
 use App\Models\Constraint;
 use App\Models\User;
 use App\Models\Transaction;
-
+use App\Models\BetSlip;
 
 class PageController extends Controller
 {
@@ -22,7 +22,18 @@ class PageController extends Controller
         if($page == "billing"){
             return view("pages.{$page}", [
                 "games" => Game::all(),
-                "constraint" => Constraint::find(1)
+                "constraint" => Constraint::find(1),
+                "BetSlip" => BetSlip::select('*')
+                                    ->where("userId", auth()->user()->id)
+                                    ->where("status", "queue")
+                                    ->get(),
+                
+                "totalOdds" => BetSlip::select('*')
+                                    ->where("userId", auth()->user()->id)
+                                    ->where("status", "queue")
+                                    ->sum("odd"),
+
+
             ]);
         }
 
@@ -41,6 +52,16 @@ class PageController extends Controller
             return view("pages.{$page}", [
                 "Transactions" => Transaction::select('*')
                 ->where("userId", auth()->user()->id)
+                ->get(),
+
+            ]);
+        }
+
+        if($page == "History"){
+            return view("pages.{$page}", [
+                "History" => BetSlip::select('*')
+                ->where("userId", auth()->user()->id)
+                ->where("status", "!=", "queue")
                 ->get(),
 
             ]);

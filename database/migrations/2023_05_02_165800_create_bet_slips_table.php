@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer("gameId");
             $table->string("gameName");
             $table->string("market");
-            $table->integer("odd");
+            $table->double("odd");
             $table->string("status");
 
             $table->timestamps();

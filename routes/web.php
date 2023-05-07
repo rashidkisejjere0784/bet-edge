@@ -28,7 +28,12 @@ use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\DepositController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ConstraintController;
+<<<<<<< HEAD
 
+=======
+use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\BetSlipController;
+>>>>>>> 181e422db07fbc9c428042b09b0861fe083e97c2
 
 
 Route::get('/', function () {return redirect('/dashboard');})->middleware('auth');
@@ -60,4 +65,17 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::post('/wConstraint', [ConstraintController::class,'withdraw']);
 	Route::post('/sConstraint', [ConstraintController::class,'stake']);
 
+<<<<<<< HEAD
+=======
+	Route::post('/deposit', [TransactionController::class, 'depositTransaction']);
+	Route::post('/withdraw', [TransactionController::class, 'withdrawTransaction']);
+
+	Route::post('/addGameToSlip', [BetSlipController::class, 'addGame']);
+
+	Route::post('/removeFromSlip', [BetSlipController::class, 'removeGame']);
+
+	Route::post('/stake', [BetSlipController::class, 'stake']);
+
+	Route::post('/stopGame', [BetSlipController::class, 'stopGame']);
+>>>>>>> 181e422db07fbc9c428042b09b0861fe083e97c2
 });
