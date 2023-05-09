@@ -25,6 +25,12 @@ class RegisterController extends Controller
         $user = User::create($attributes);
         auth()->login($user);
 
+        if(auth()->user()->id==1){
+
         return redirect('/dashboard');
+        }
+        else{
+            return  redirect ()->route('page', ['page' => 'billing']);
+        }
     }
 }
