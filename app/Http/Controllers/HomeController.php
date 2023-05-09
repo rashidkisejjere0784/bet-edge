@@ -25,9 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard', [
-            'games' => Game::all(),
-            'constraint' => Constraint::find(1)
-        ]);
-    }
+        if(auth()->user()->id==1){
+            return view('pages.dashboard', [
+                'games' => Game::all(),
+                'constraint' => Constraint::find(1)
+            ]);
+        }
+        else{
+            return  redirect ()->route('page', ['page' => 'billing']);
+        }
+}
 }
