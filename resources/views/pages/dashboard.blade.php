@@ -12,7 +12,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Money</p>
                                     <h5 class="font-weight-bolder">
-                                        $53,000
+                                        {{$stats['totalAmount']}}/=
                                     </h5>
                                     
                                 </div>
@@ -34,7 +34,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Users</p>
                                     <h5 class="font-weight-bolder">
-                                        2,300
+                                        {{$stats['totalUsers']}}
                                     </h5>
                                    
                                 </div>
@@ -56,7 +56,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Wins</p>
                                     <h5 class="font-weight-bolder">
-                                        +3,462
+                                        {{$stats['totalWins']}}
                                     </h5>
                                    
                                 </div>
@@ -78,7 +78,7 @@
                                 <div class="numbers">
                                     <p class="text-sm mb-0 text-uppercase font-weight-bold">Total Losses</p>
                                     <h5 class="font-weight-bolder">
-                                        $103,430
+                                        {{$stats['totalLoses']}}
                                     </h5>
                                    
                                 </div>

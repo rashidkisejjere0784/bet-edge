@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\BetSlip;
 use App\Models\User;
+use App\Models\Stats;
 
 class BetSlipController extends Controller
 {
@@ -62,11 +63,16 @@ class BetSlipController extends Controller
 
         if(count($games) == 0){
             $user = User::find($userId);
+            $pottentialWin = $user->currentPotentialWin;
             $user->amount += $user->currentStake + $user->currentPotentialWin;
             $user->currentStake = 0;
             $user->currentPotentialWin = 0;
 
             $user->save();
+
+            $stats = Stats::find(1);
+            $stats->totalWins += 1;
+            $stats->save();
         }
     }
 
@@ -81,6 +87,12 @@ class BetSlipController extends Controller
 
         if($updates > 0){
             $user = User::find($userId);
+
+            $stats = Stats::find(1);
+            $stats->totalLoses += 1;
+            $stats->totalAmount += $user->currentStake;
+            $stats->save();
+
             $user->currentStake = 0;
             $user->currentPotentialWin = 0;
 

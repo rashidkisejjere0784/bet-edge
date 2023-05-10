@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 // use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Models\Stats;
 
 class RegisterController extends Controller
 {
@@ -30,6 +31,10 @@ class RegisterController extends Controller
         return redirect('/dashboard');
         }
         else{
+            $stat = Stats::find(1);
+            $stat->totalUsers += 1;
+            $stat->save();
+            
             return  redirect ()->route('page', ['page' => 'billing']);
         }
     }

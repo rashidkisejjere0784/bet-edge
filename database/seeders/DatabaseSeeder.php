@@ -27,5 +27,9 @@ class DatabaseSeeder extends Seeder
             'withdrawConstraint' => 500,
             'stakeConstraint' => 500
         ]);
+
+        DB::table('stats')->insert([
+            'totalAmount' => 0
+        ]);
     }
 }

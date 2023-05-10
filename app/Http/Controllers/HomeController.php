@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Game;
 use App\Models\Constraint;
+use App\Models\Stats;
 
 class HomeController extends Controller
 {
@@ -28,7 +29,8 @@ class HomeController extends Controller
         if(auth()->user()->id==1){
             return view('pages.dashboard', [
                 'games' => Game::all(),
-                'constraint' => Constraint::find(1)
+                'constraint' => Constraint::find(1),
+                'stats' => Stats::find(1)
             ]);
         }
         else{
