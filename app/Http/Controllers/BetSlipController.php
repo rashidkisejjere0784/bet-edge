@@ -39,11 +39,9 @@ class BetSlipController extends Controller
                     }
                 }
             }
+            Game::where("id", $gameId)
+            ->delete();
         }
-
-        Game::where("id", $gameId)
-                ->delete();
-
         return redirect()->route('home');
     } 
 
