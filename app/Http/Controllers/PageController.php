@@ -20,6 +20,13 @@ class PageController extends Controller
     public function index(string $page)
     {
         if($page == "billing"){
+            $Odds = BetSlip::all()->where("userId", auth()->user()->id)
+                                                ->where("status", "queue")
+                                                ->pluck('odd')->toArray();
+
+            $totalOdds = array_product($Odds);
+
+
             return view("pages.{$page}", [
                 "games" => Game::all(),
                 "constraint" => Constraint::find(1),
@@ -28,10 +35,7 @@ class PageController extends Controller
                                     ->where("status", "queue")
                                     ->get(),
                 
-                "totalOdds" => BetSlip::select('*')
-                                    ->where("userId", auth()->user()->id)
-                                    ->where("status", "queue")
-                                    ->sum("odd"),
+                "totalOdds" => $totalOdds,
 
 
             ]);
