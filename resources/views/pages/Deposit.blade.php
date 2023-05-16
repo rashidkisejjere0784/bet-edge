@@ -42,7 +42,7 @@
                                 <form action="deposit" method="post" class="mt-5">
                                     @csrf
                             
-                                   <h4 class="text-uppercase">Minimum Depost : {{$constraint['depositConstraint']}}/=</h4>
+                                   <h4 class="text-uppercase">Minimum Deposit : {{$constraint['depositConstraint']}}/=</h4>
         
                                     <input id="amount" name="amount" type="number" class="form-control mb-3" onkeyup="Validate()" placeholder="Amount">
                                     <p id="info" class="mt-1" style="color:gray">amount must be greater than {{$constraint['depositConstraint']}}</p>

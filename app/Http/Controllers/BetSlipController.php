@@ -62,7 +62,7 @@ class BetSlipController extends Controller
         if(count($games) == 0){
             $user = User::find($userId);
             $pottentialWin = $user->currentPotentialWin;
-            $user->amount += $user->currentStake + $user->currentPotentialWin;
+            $user->amount += $user->currentPotentialWin;
             $user->currentStake = 0;
             $user->currentPotentialWin = 0;
 
